@@ -1,0 +1,43 @@
+.account-login {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  flex: 1;
+  gap: 64px;
+
+  .fields {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 24px;
+  }
+
+  .username,
+  .password {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .label {
+      color: #161E1E;
+      font-weight: 600;
+    }
+
+    .input {
+      padding: 16px 8px;
+      border: 1px solid #65928B;
+      border-radius: 8px;
+      outline-color: #51756F;
+      font-size: 16px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+}
+
+// #9EE4D9 #7EB6AE #65928B #51756F #415E59 #344B47 #2A3C39 #22302E #1B2625 #161E1E Black
+//  #9EE4D9 #B1E9E1 #C1EDE7 #CDF1EC #D7F4F0 #DFF6F3 #E5F8F5 #EAF9F7 #EEFAF9 #F1FBFA White
+

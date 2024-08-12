@@ -1,0 +1,16 @@
+.button {
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #65928B;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: 100%;
+  cursor: pointer;
+
+  &:active {
+    background-color: #415E59;
+  }
+}
