@@ -4,7 +4,7 @@ import ScheduleHours from './ScheduleHours'
 import ScheduleDays from './ScheduleDays'
 import ScheduleControl from './ScheduleControl'
 // import ScheduleEvent from './ScheduleEvent'
-
+import ScheduleEventList from './ScheduleEventList'
 import './Schedule.scss'
 import { useState } from 'react'
 
@@ -22,6 +22,7 @@ function Schedule({ events }) {
           <ScheduleHours />
           <div className="events">
             <ScheduleCell />
+            <ScheduleEventList events={events} />
           </div>
         </div>
       </section>
