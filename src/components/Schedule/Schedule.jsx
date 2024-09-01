@@ -6,23 +6,18 @@ import ScheduleControl from './ScheduleControl'
 // import ScheduleEvent from './ScheduleEvent'
 import ScheduleEventList from './ScheduleEventList'
 import './Schedule.scss'
-import { useState } from 'react'
 
-function Schedule({ events }) {
-  const MILISECONDS_IN_ONE_DAY = 86400000
-  const [start, setStart] = useState(new Date())
-  const [end, setEnd] = useState(new Date(start.getTime() + 6 * MILISECONDS_IN_ONE_DAY))
-
+function Schedule({ events, currentStart, currentEnd, setCurrentStart, setCurrentEnd }) {
   return (
     <div className="schedule">
-      <ScheduleControl start={start} setStart={setStart} setEnd={setEnd}/>
+      <ScheduleControl start={currentStart} setStart={setCurrentStart} setEnd={setCurrentEnd}/>
       <section className="calendar">
-        <ScheduleDays start={start} end={end}/>
+        <ScheduleDays start={currentStart} end={currentEnd}/>
         <div className="board">
           <ScheduleHours />
           <div className="events">
             <ScheduleCell />
-            <ScheduleEventList events={events} />
+            <ScheduleEventList events={events} currentStart={currentStart} currentEnd={currentEnd} />
           </div>
         </div>
       </section>
