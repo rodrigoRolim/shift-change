@@ -7,10 +7,10 @@ function WorkSchedule() {
   const MILISECONDS_IN_ONE_DAY = 86400000
   const [start, setStart] = useState(new Date())
   const [end, setEnd] = useState(new Date(start.getTime() + 6 * MILISECONDS_IN_ONE_DAY))
-  const events = [{ period: { start, end }, description: 'blablablabla', position: { x, y }, currentPeriodOnBoard }]
+  const events = [{ id: 0, period: { start: new Date(2024, 8, 3, 10, 35, 29, 0), end: new Date(2024, 8, 3, 12, 15, 12, 0) }, description: 'blablablabla' }]
   return (
     <div className="work-schedule">
-      <Schedule events={events} start={start} setStart={setStart} end={end} setEnd={setEnd}/>
+      <Schedule events={events}  currentStart={start} setCurrentStart={setStart} currentEnd={end} setCurrentEnd={setEnd} />
     </div>
   )
 }

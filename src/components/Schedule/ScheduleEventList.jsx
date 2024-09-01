@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
 import ScheduleEvent from './ScheduleEvent'
 
-function ScheduleEventList({ events, currentPeriodOnBoard }) {
+function ScheduleEventList({ events, currentStart, currentEnd }) {
+  console.log(currentEnd.getTime())
   const eventList = events.map(event => {
-    return (
+    return event.period.start.getTime() >= currentStart.getTime() && event.period.end.getTime() <= currentEnd.getTime() && (
       <ScheduleEvent
         key={event.id}
         description={event.description} 
-        position={event.position} 
         eventPeriod={event.period} 
-        currentPeriodOnBoard={currentPeriodOnBoard}
+        // currentPeriodOnBoard={currentPeriodOnBoard}
       />
     )
   })
@@ -23,7 +23,7 @@ function ScheduleEventList({ events, currentPeriodOnBoard }) {
 
 ScheduleEventList.propTypes = {
   events: PropTypes.array.isRequired,
-  currentPeriodOnBoard: PropTypes.object.isRequired
+  // currentPeriodOnBoard: PropTypes.object.isRequired
 }
 
 export default ScheduleEventList
